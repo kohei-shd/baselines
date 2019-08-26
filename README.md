@@ -1,160 +1,233 @@
-**Status:** Active (under active development, breaking changes may occur)
+![PlayCanvas](http://static.playcanvas.com/images/logo/Playcanvas_LOGOSET_SMALL-06.png)
 
-<img src="data/logo.jpg" width=25% align="right" /> [![Build status](https://travis-ci.org/openai/baselines.svg?branch=master)](https://travis-ci.org/openai/baselines)
+# PlayCanvas WebGL Game Engineですです
 
-# Baselines
+PlayCanvas is an open-source game engine. It uses HTML5 and WebGL to run games and other interactive 3D content in all modern browsers without the need for a plugin.
 
-OpenAI Baselines is a set of high-quality implementations of reinforcement learning algorithms.
+## Project Showcase
 
-These algorithms will make it easier for the research community to replicate, refine, and identify new ideas, and will create good baselines to build research on top of. Our DQN implementation and its variants are roughly on par with the scores in published papers. We expect they will be used as a base around which new ideas can be added, and as a tool for comparing a new approach against existing ones. 
+Many games and apps have been published using the PlayCanvas engine. Here is a small selection:
 
-## Prerequisites 
-Baselines requires python3 (>=3.5) with the development headers. You'll also need system packages CMake, OpenMPI and zlib. Those can be installed as follows
-### Ubuntu 
-    
-```bash
-sudo apt-get update && sudo apt-get install cmake libopenmpi-dev python3-dev zlib1g-dev
+[![After The Flood](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/14928/440410/98554E-image-25.jpg)](https://playcanv.as/p/44MRmJRU/) [![Master Archer](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/415995/10A5A9-image-25.jpg)](https://apps.facebook.com/1315812941823883/) [![Disney: Hour of Code](https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/disney_moana_hourofcode.jpg)](http://partners.disney.com/hour-of-code/wayfinding-with-code) [![WebVR Lab](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/446331/CAAA6B-image-25.jpg)](https://playcanv.as/p/sAsiDvtC/)
+<br />
+[![TANX](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/45093/ESR5DQ-image-25.jpg)](https://tanx.io/) [![Swooop](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4763/TKYXB8-image-25.jpg)](https://chrome.google.com/webstore/detail/swooop/jblimahfbhdcengjfbdpdngcfcghladf) [![Flappy Bird](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/8/375389/23PRTL-image-25.jpg)](http://www.miniclip.com/games/flappy-bird/en/) [![Virtual Voodoo](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/422705/E23A1E-image-25.jpg)](http://www.miniclip.com/games/virtual-voodoo/en/)
+<br />
+[![Space Base](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/411394/I2C48B-image-25.jpg)](https://playcanv.as/p/yipplmVO/) [![Sponza Runtime Lightmaps](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/391368/221DFF-image-25.jpg)](https://playcanv.as/p/txPePQvy/) [![Star-Lord](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/333626/BGQN9H-image-25.jpg)](https://playcanv.as/p/SA7hVBLt) [![Orange Room VR](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/434546/BKST60-image-25.jpg)](https://playcanv.as/p/zi09Xvld/)
+<br />
+[![Car](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/347824/7ULQ3Y-image-25.jpg)](http://car.playcanvas.com/) [![Steampunk Slots](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/23510/344862/VH0NOH-image-25.jpg)](https://playcanv.as/p/nL1dYbMv) [![Casino](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/14928/349824/U88HJQ-image-25.jpg)](http://casino.playcanvas.com/) [![Seemore](https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/14705/319531/O4J4VU-image-25.jpg)](https://playcanv.as/p/MflWvdTW/)
+
+You can see more games on the [PlayCanvas website](https://playcanvas.com/explore).
+
+## Users
+
+PlayCanvas Engine and Tools been used by leading companies in game development, automotive, digital agencies and more. Some of them are:  
+**Disney, King, Zynga, Miniclip, Nickelodeon, Leapfrog, IGT, ARM, Samsung, Mozilla, Facebook**
+
+## Features
+
+The PlayCanvas Engine is a fully featured game engine.
+
+* **Graphics**
+    * WebGL 2.0 based renderer (with fallback to WebGL 1.0)
+    * Physically based rendering (PBR)
+    * Directional, point and spot lights
+    * Shadow mapping (PCF and VSM implementations)
+    * Runtime lightmap baking
+    * Static, skinned and morphed meshes
+    * GPU Particle engine with editor
+    * PostFX library: bloom, edge detect, FXAA, vignette, etc
+    * Seamless default material support from Maya, 3DS Max, Blender, etc.
+    * Full model export pipeline from Maya, 3DS Max, Blender, etc via [Assets User Manual](http://developer.playcanvas.com/en/user-manual/assets/)
+* **Collision & Physics**
+    * Full integration with 3D rigid-body physics engine [ammo.js](https://github.com/kripken/ammo.js)
+* **Audio**
+    * 3D Positional audio via Web Audio API
+* **Resource Loading**
+    * Simple and powerful resource loading
+    * Streaming of individual assets
+    * Asset Variants - loads compressed textures (DXT, PVR, ETC1, ETC2) based on platform support
+* **Entity / Component System**
+    * Built-in components: model, sound, animation, camera, collision, light, rigidbody, script, particlesystem
+* **Scripting system**
+    * Write game behaviors by attaching JavaScript to game entities
+    * Live code hot-swap enables rapid iteration
+* **Input**
+    * Mouse, Keyboard, Touch, Gamepad, VR
+
+## Usage
+
+Here's a super-simple Hello World example - a spinning cube!
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PlayCanvas Hello Cube</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script src='https://code.playcanvas.com/playcanvas-stable.min.js'></script>
+</head>
+<body>
+    <canvas id='application'></canvas>
+    <script>
+        // create a PlayCanvas application
+        var canvas = document.getElementById('application');
+        var app = new pc.Application(canvas, { });
+        app.start();
+
+        // fill the available space at full resolution
+        app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
+        app.setCanvasResolution(pc.RESOLUTION_AUTO);
+
+        // ensure canvas is resized when window changes size
+        window.addEventListener('resize', function() {
+            app.resizeCanvas();
+        });
+
+        // create box entity
+        var cube = new pc.Entity('cube');
+        cube.addComponent('model', {
+            type: 'box'
+        });
+
+        // create camera entity
+        var camera = new pc.Entity('camera');
+        camera.addComponent('camera', {
+            clearColor: new pc.Color(0.1, 0.1, 0.1)
+        });
+
+        // create directional light entity
+        var light = new pc.Entity('light');
+        light.addComponent('light');
+
+        // add to hierarchy
+        app.root.addChild(cube);
+        app.root.addChild(camera);
+        app.root.addChild(light);
+
+        // set up initial positions and orientations
+        camera.setPosition(0, 0, 3);
+        light.setEulerAngles(45, 0, 0);
+
+        // register a global update event
+        app.on('update', function (deltaTime) {
+            cube.rotate(10 * deltaTime, 20 * deltaTime, 30 * deltaTime);
+        });
+    </script>
+</body>
+</html>
 ```
-    
-### Mac OS X
-Installation of system packages on Mac requires [Homebrew](https://brew.sh). With Homebrew installed, run the following:
-```bash
-brew install cmake openmpi
-```
-    
-## Virtual environment
-From the general python package sanity perspective, it is a good idea to use virtual environments (virtualenvs) to make sure packages from different projects do not interfere with each other. You can install virtualenv (which is itself a pip package) via
-```bash
-pip install virtualenv
-```
-Virtualenvs are essentially folders that have copies of python executable and all python packages.
-To create a virtualenv called venv with python3, one runs 
-```bash
-virtualenv /path/to/venv --python=python3
-```
-To activate a virtualenv: 
-```
-. /path/to/venv/bin/activate
-```
-More thorough tutorial on virtualenvs and options can be found [here](https://virtualenv.pypa.io/en/stable/) 
 
+Want to play with the code yourself? Edit it on [CodePen](http://codepen.io/playcanvas/pen/NPbxMj).
 
-## Installation
-- Clone the repo and cd into it:
-    ```bash
-    git clone https://github.com/openai/baselines.git
-    cd baselines
-    ```
-- If you don't have TensorFlow installed already, install your favourite flavor of TensorFlow. In most cases, 
-    ```bash 
-    pip install tensorflow-gpu # if you have a CUDA-compatible gpu and proper drivers
-    ```
-    or 
-    ```bash
-    pip install tensorflow
-    ```
-    should be sufficient. Refer to [TensorFlow installation guide](https://www.tensorflow.org/install/)
-    for more details. 
+## Tutorials & Examples
 
-- Install baselines package
-    ```bash
-    pip install -e .
-    ```
+See all the [tutorials](http://developer.playcanvas.com/tutorials/) here.
 
-### MuJoCo
-Some of the baselines examples use [MuJoCo](http://www.mujoco.org) (multi-joint dynamics in contact) physics simulator, which is proprietary and requires binaries and a license (temporary 30-day license can be obtained from [www.mujoco.org](http://www.mujoco.org)). Instructions on setting up MuJoCo can be found [here](https://github.com/openai/mujoco-py)
+## Documentation
 
-## Testing the installation
-All unit tests in baselines can be run using pytest runner:
-```
-pip install pytest
-pytest
-```
+Full documentation available on the [PlayCanvas Developer](http://developer.playcanvas.com) site including [API reference](http://developer.playcanvas.com/en/api/)
 
-## Training models
-Most of the algorithms in baselines repo are used as follows:
-```bash
-python -m baselines.run --alg=<name of the algorithm> --env=<environment_id> [additional arguments]
-```
-### Example 1. PPO with MuJoCo Humanoid
-For instance, to train a fully-connected network controlling MuJoCo humanoid using PPO2 for 20M timesteps
-```bash
-python -m baselines.run --alg=ppo2 --env=Humanoid-v2 --network=mlp --num_timesteps=2e7
-```
-Note that for mujoco environments fully-connected network is default, so we can omit `--network=mlp`
-The hyperparameters for both network and the learning algorithm can be controlled via the command line, for instance:
-```bash
-python -m baselines.run --alg=ppo2 --env=Humanoid-v2 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
-will set entropy coefficient to 0.1, and construct fully connected network with 3 layers with 32 hidden units in each, and create a separate network for value function estimation (so that its parameters are not shared with the policy network, but the structure is the same)
+## Releases
 
-See docstrings in [common/models.py](baselines/common/models.py) for description of network parameters for each type of model, and 
-docstring for [baselines/ppo2/ppo2.py/learn()](baselines/ppo2/ppo2.py#L152) for the description of the ppo2 hyperparameters. 
+A full list of Releases and Release Notes is available [here](https://github.com/playcanvas/engine/releases).
 
-### Example 2. DQN on Atari 
-DQN with Atari is at this point a classics of benchmarks. To run the baselines implementation of DQN on Atari Pong:
-```
-python -m baselines.run --alg=deepq --env=PongNoFrameskip-v4 --num_timesteps=1e6
-```
+## How to get models?
 
-## Saving, loading and visualizing models
+To convert any models created using a 3D modelling package see [this page](http://developer.playcanvas.com/en/engine/) in the developer documentation.
 
-### Saving and loading the model
-The algorithms serialization API is not properly unified yet; however, there is a simple method to save / restore trained models. 
-`--save_path` and `--load_path` command-line option loads the tensorflow state from a given path before training, and saves it after the training, respectively. 
-Let's imagine you'd like to train ppo2 on Atari Pong,  save the model and then later visualize what has it learnt.
-```bash
-python -m baselines.run --alg=ppo2 --env=PongNoFrameskip-v4 --num_timesteps=2e7 --save_path=~/models/pong_20M_ppo2
-```
-This should get to the mean reward per episode about 20. To load and visualize the model, we'll do the following - load the model, train it for 0 steps, and then visualize: 
-```bash
-python -m baselines.run --alg=ppo2 --env=PongNoFrameskip-v4 --num_timesteps=0 --load_path=~/models/pong_20M_ppo2 --play
-```
+## How to build
 
-*NOTE:* Mujoco environments require normalization to work properly, so we wrap them with VecNormalize wrapper. Currently, to ensure the models are saved with normalization (so that trained models can be restored and run without further training) the normalization coefficients are saved as tensorflow variables. This can decrease the performance somewhat, so if you require high-throughput steps with Mujoco and do not need saving/restoring the models, it may make sense to use numpy normalization instead. To do that, set 'use_tf=False` in [baselines/run.py](baselines/run.py#L116). 
+* Ensure you have [nodejs](https://nodejs.org) installed
+* Ensure you have [Java](https://java.com/en/download/) installed.
 
-### Logging and vizualizing learning curves and other training metrics
-By default, all summary data, including progress, standard output, is saved to a unique directory in a temp folder, specified by a call to Python's [tempfile.gettempdir()](https://docs.python.org/3/library/tempfile.html#tempfile.gettempdir).
-The directory can be changed with the `--log_path` command-line option.
-```bash
-python -m baselines.run --alg=ppo2 --env=PongNoFrameskip-v4 --num_timesteps=2e7 --save_path=~/models/pong_20M_ppo2 --log_path=~/logs/Pong/
-```
-*NOTE:* Please be aware that the logger will overwrite files of the same name in an existing directory, thus it's recommended that folder names be given a unique timestamp to prevent overwritten logs.
+The first time you build you will be asked to install dependencies using `npm`. e.g.
 
-Another way the temp directory can be changed is through the use of the `$OPENAI_LOGDIR` environment variable.
+    npm install fs-extra
+    npm install google-closure-compiler
+    npm install preprocessor
 
-For examples on how to load and display the training data, see [here](docs/viz/viz.ipynb).
+Then, to execute a build of the engine to the build/output folder, do:
 
-## Subpackages
+    cd build
+    node build.js
 
-- [A2C](baselines/a2c)
-- [ACER](baselines/acer)
-- [ACKTR](baselines/acktr)
-- [DDPG](baselines/ddpg)
-- [DQN](baselines/deepq)
-- [GAIL](baselines/gail)
-- [HER](baselines/her)
-- [PPO1](baselines/ppo1) (obsolete version, left here temporarily)
-- [PPO2](baselines/ppo2) 
-- [TRPO](baselines/trpo_mpi)
+See the built in help for more build instructions
 
+    node build.js -h
 
+Pre-built versions of the engine are also available.
 
-## Benchmarks
-Results of benchmarks on Mujoco (1M timesteps) and Atari (10M timesteps) are available 
-[here for Mujoco](https://htmlpreview.github.com/?https://github.com/openai/baselines/blob/master/benchmarks_mujoco1M.htm) 
-and
-[here for Atari](https://htmlpreview.github.com/?https://github.com/openai/baselines/blob/master/benchmarks_atari10M.htm) 
-respectively. Note that these results may be not on the latest version of the code, particular commit hash with which results were obtained is specified on the benchmarks page. 
+Latest development release:
 
-To cite this repository in publications:
+* https://code.playcanvas.com/playcanvas-latest.js
+* https://code.playcanvas.com/playcanvas-latest.min.js
 
-    @misc{baselines,
-      author = {Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai and Zhokhov, Peter},
-      title = {OpenAI Baselines},
-      year = {2017},
-      publisher = {GitHub},
-      journal = {GitHub repository},
-      howpublished = {\url{https://github.com/openai/baselines}},
-    }
+Latest stable release:
 
+* https://code.playcanvas.com/playcanvas-stable.js
+* https://code.playcanvas.com/playcanvas-stable.min.js
+
+Specific engine versions:
+
+* https://code.playcanvas.com/playcanvas-0.181.11.js
+* https://code.playcanvas.com/playcanvas-0.181.11.min.js
+
+## How to run tests
+
+PlayCanvas makes use of Karma for running unit tests, and provides three test ways of executing them depending on what phase of development you're in:
+
+    # Runs the tests once over the unbuilt source files - useful if you just want a quick 'all-clear'
+    npm run test
+
+    # Watches all source and test files for changes, and automatically re-runs the tests when they change.
+    # Open http://localhost:9876/debug.html in your browser to debug the tests in real time.
+    #
+    # You can also edit the `tests/**/test_*.js` glob in tests/karma.conf.js to run a subset of the tests,
+    # during development.
+    npm run test:watch
+
+    # Runs the tests once over playcanvas-latest.js - mainly used by CI, but sometimes useful if you want
+    # to test the engine after building it. Make sure to do `npm run build` first to make sure you have
+    # an up-to-date build.
+    npm run test:release
+
+## Getting Help
+
+[**Forums**](https://forum.playcanvas.com) - Use the forum to ask/answer questions about PlayCanvas.
+
+[**Discord**](https://discord.gg/N67tQuU) - Real-time text, voice and video chat for the PlayCanvas developer community.
+
+## Contributing
+
+Want to help us make the best 3D engine on the web? Great!
+Check out [CONTRIBUTING.md](https://github.com/playcanvas/engine/blob/master/.github/CONTRIBUTING.md) that will get you started.
+And look for ["good first PR"](https://github.com/playcanvas/engine/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+PR%22)  label in Issues.
+
+### Github Issues
+
+Please use [Github Issues](https://github.com/playcanvas/engine/issues) to report bugs or request features.
+
+### Reporting bugs
+
+Please follow these steps to report a bug
+
+1. **Search for related issues** - search the existing issues so that you don't create duplicates
+
+2. **Create a testcase** - Please create the smallest isolated testcase that you can that reproduces your bug
+
+3. **Share as much information as possible** - everything little helps, OS, browser version, all that stuff.
+
+## PlayCanvas Platform
+
+The PlayCanvas Engine is an open source engine which you can use to create games and 3D visualisation in the browser. In addition to the engine we also make the [PlayCanvas development platform](https://playcanvas.com/) which features an Visual Editor, asset management, code editing, hosting and publishing services.
+
+## License
+
+The PlayCanvas Engine is released under the [MIT](http://opensource.org/licenses/MIT) license. See LICENSE file.
